@@ -258,11 +258,33 @@
                 "key": 1677018600114,
                 "children": [],
                 "todo": {
-                  "content": "",
+                  "content": "- Prisma Database Design",
                   "id": 1677018600114,
                   "level": "default",
                   "done": false,
                   "start": 1677018600114
+                }
+              },
+              {
+                "key": 1677018624015,
+                "children": [],
+                "todo": {
+                  "content": "- CRUD Users",
+                  "id": 1677018624015,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677018624015
+                }
+              },
+              {
+                "key": 1677018627104,
+                "children": [],
+                "todo": {
+                  "content": "- Authenticate",
+                  "id": 1677018627104,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677018627104
                 }
               }
             ],
@@ -272,28 +294,6 @@
               "level": "default",
               "done": false,
               "start": 1676990805769
-            }
-          },
-          {
-            "key": 1677018624015,
-            "children": [],
-            "todo": {
-              "content": "",
-              "id": 1677018624015,
-              "level": "default",
-              "done": false,
-              "start": 1677018624015
-            }
-          },
-          {
-            "key": 1677018627104,
-            "children": [],
-            "todo": {
-              "content": "",
-              "id": 1677018627104,
-              "level": "default",
-              "done": false,
-              "start": 1677018627104
             }
           },
           {
@@ -335,6 +335,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677018630338"
+    "version": "1677045642026"
   }
 }
