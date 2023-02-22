@@ -289,7 +289,73 @@
           },
           {
             "key": 1677018624015,
-            "children": [],
+            "children": [
+              {
+                "key": 1677067464757,
+                "children": [],
+                "todo": {
+                  "content": "- Get All Users",
+                  "id": 1677067464757,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067464757,
+                  "focus": false,
+                  "end": 1677067540249
+                }
+              },
+              {
+                "key": 1677067475677,
+                "children": [],
+                "todo": {
+                  "content": "- Get Single User",
+                  "id": 1677067475677,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067475677,
+                  "focus": false,
+                  "end": 1677067540739
+                }
+              },
+              {
+                "key": 1677067483943,
+                "children": [],
+                "todo": {
+                  "content": "- Create User",
+                  "id": 1677067483943,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067483943,
+                  "focus": false,
+                  "end": 1677067541467
+                }
+              },
+              {
+                "key": 1677067493461,
+                "children": [],
+                "todo": {
+                  "content": "- Update User",
+                  "id": 1677067493461,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067493461,
+                  "focus": false,
+                  "end": 1677067542868
+                }
+              },
+              {
+                "key": 1677067504745,
+                "children": [],
+                "todo": {
+                  "content": "- Delete User",
+                  "id": 1677067504745,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067504745,
+                  "focus": false,
+                  "end": 1677067543371
+                }
+              }
+            ],
             "todo": {
               "content": "- CRUD Users",
               "id": 1677018624015,
@@ -297,12 +363,91 @@
               "done": true,
               "start": 1677018624015,
               "focus": false,
-              "end": 1677052502924
+              "end": 1677067545187
             }
           },
           {
             "key": 1677018627104,
-            "children": [],
+            "children": [
+              {
+                "key": 1677067555551,
+                "children": [],
+                "todo": {
+                  "content": "- User Register",
+                  "id": 1677067555551,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067555551,
+                  "focus": false,
+                  "end": 1677067634373
+                }
+              },
+              {
+                "key": 1677067568257,
+                "children": [],
+                "todo": {
+                  "content": "- User Login",
+                  "id": 1677067568257,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067568257,
+                  "focus": false,
+                  "end": 1677067634762
+                }
+              },
+              {
+                "key": 1677067575235,
+                "children": [],
+                "todo": {
+                  "content": "- User Account",
+                  "id": 1677067575235,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067575235,
+                  "focus": false,
+                  "end": 1677067635312
+                }
+              },
+              {
+                "key": 1677067587959,
+                "children": [],
+                "todo": {
+                  "content": "- User Logout",
+                  "id": 1677067587959,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067587959,
+                  "focus": false,
+                  "end": 1677067636000
+                }
+              },
+              {
+                "key": 1677067597286,
+                "children": [],
+                "todo": {
+                  "content": "- User Update Details",
+                  "id": 1677067597286,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067597286,
+                  "focus": false,
+                  "end": 1677067636456
+                }
+              },
+              {
+                "key": 1677067606053,
+                "children": [],
+                "todo": {
+                  "content": "- User Change Password",
+                  "id": 1677067606053,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067606053,
+                  "focus": false,
+                  "end": 1677067638100
+                }
+              }
+            ],
             "todo": {
               "content": "- Authenticate",
               "id": 1677018627104,
@@ -310,12 +455,26 @@
               "done": true,
               "start": 1677018627104,
               "focus": false,
-              "end": 1677052507482
+              "end": 1677067639207
             }
           },
           {
             "key": 1677049254320,
-            "children": [],
+            "children": [
+              {
+                "key": 1677067647640,
+                "children": [],
+                "todo": {
+                  "content": "- Protect User Route",
+                  "id": 1677067647640,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067647640,
+                  "focus": false,
+                  "end": 1677067691665
+                }
+              }
+            ],
             "todo": {
               "content": "- Protect Route",
               "id": 1677049254320,
@@ -323,12 +482,26 @@
               "done": true,
               "start": 1677049254321,
               "focus": false,
-              "end": 1677052501268
+              "end": 1677067692290
             }
           },
           {
             "key": 1677049265208,
-            "children": [],
+            "children": [
+              {
+                "key": 1677067697732,
+                "children": [],
+                "todo": {
+                  "content": "- Protect Admin Route And Authorize",
+                  "id": 1677067697732,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677067697732,
+                  "focus": false,
+                  "end": 1677070922781
+                }
+              }
+            ],
             "todo": {
               "content": "- Authorize",
               "id": 1677049265208,
@@ -336,7 +509,74 @@
               "done": true,
               "start": 1677049265208,
               "focus": false,
-              "end": 1677052499611
+              "end": 1677070923446
+            }
+          },
+          {
+            "key": 1677070939381,
+            "children": [
+              {
+                "key": 1677070956536,
+                "children": [],
+                "todo": {
+                  "content": "- Get All Categories",
+                  "id": 1677070956536,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677070956536
+                }
+              },
+              {
+                "key": 1677070970501,
+                "children": [],
+                "todo": {
+                  "content": "- Get Single Category",
+                  "id": 1677070970501,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677070970501
+                }
+              },
+              {
+                "key": 1677070986430,
+                "children": [],
+                "todo": {
+                  "content": "- Create Category",
+                  "id": 1677070986430,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677070986430
+                }
+              },
+              {
+                "key": 1677071000022,
+                "children": [],
+                "todo": {
+                  "content": "- Update Category",
+                  "id": 1677071000022,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677071000022
+                }
+              },
+              {
+                "key": 1677071009824,
+                "children": [],
+                "todo": {
+                  "content": "- Delete Category",
+                  "id": 1677071009824,
+                  "level": "default",
+                  "done": false,
+                  "start": 1677071009824
+                }
+              }
+            ],
+            "todo": {
+              "content": "- Categories",
+              "id": 1677070939381,
+              "level": "default",
+              "done": false,
+              "start": 1677070939381
             }
           }
         ],
@@ -366,6 +606,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677052507560"
+    "version": "1677071023585"
   }
 }
