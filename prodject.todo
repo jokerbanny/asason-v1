@@ -252,51 +252,6 @@
             }
           },
           {
-            "key": 1676990805769,
-            "children": [
-              {
-                "key": 1677018600114,
-                "children": [],
-                "todo": {
-                  "content": "- Prisma Database Design",
-                  "id": 1677018600114,
-                  "level": "default",
-                  "done": false,
-                  "start": 1677018600114
-                }
-              },
-              {
-                "key": 1677018624015,
-                "children": [],
-                "todo": {
-                  "content": "- CRUD Users",
-                  "id": 1677018624015,
-                  "level": "default",
-                  "done": false,
-                  "start": 1677018624015
-                }
-              },
-              {
-                "key": 1677018627104,
-                "children": [],
-                "todo": {
-                  "content": "- Authenticate",
-                  "id": 1677018627104,
-                  "level": "default",
-                  "done": false,
-                  "start": 1677018627104
-                }
-              }
-            ],
-            "todo": {
-              "content": "Back",
-              "id": 1676990805769,
-              "level": "default",
-              "done": false,
-              "start": 1676990805769
-            }
-          },
-          {
             "key": 1677018629615,
             "children": [],
             "todo": {
@@ -315,15 +270,81 @@
           "done": false,
           "start": 1676990748530
         }
+      },
+      {
+        "key": 1676990805769,
+        "children": [
+          {
+            "key": 1677018600114,
+            "children": [],
+            "todo": {
+              "content": "- Prisma Database Design",
+              "id": 1677018600114,
+              "level": "default",
+              "done": false,
+              "start": 1677018600114
+            }
+          },
+          {
+            "key": 1677018624015,
+            "children": [],
+            "todo": {
+              "content": "- CRUD Users",
+              "id": 1677018624015,
+              "level": "default",
+              "done": false,
+              "start": 1677018624015
+            }
+          },
+          {
+            "key": 1677018627104,
+            "children": [],
+            "todo": {
+              "content": "- Authenticate",
+              "id": 1677018627104,
+              "level": "default",
+              "done": false,
+              "start": 1677018627104
+            }
+          },
+          {
+            "key": 1677049254320,
+            "children": [],
+            "todo": {
+              "content": "- Protect Route",
+              "id": 1677049254320,
+              "level": "default",
+              "done": false,
+              "start": 1677049254321
+            }
+          },
+          {
+            "key": 1677049265208,
+            "children": [],
+            "todo": {
+              "content": "- Authorize",
+              "id": 1677049265208,
+              "level": "default",
+              "done": false,
+              "start": 1677049265208
+            }
+          }
+        ],
+        "todo": {
+          "content": "Backend",
+          "id": 1676990805769,
+          "level": "default",
+          "done": false,
+          "start": 1676990805769
+        }
       }
     ],
     "expandKeys": [
-      1676990267891,
       1676990846173,
-      1676990748530,
       1676990420940,
       1676990298460,
       1676990310708,
+      1676990267891,
       1676990805769
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
@@ -335,6 +356,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677045642026"
+    "version": "1677052004459"
   }
 }
