@@ -53,17 +53,18 @@ model courses {
   thumbnail          String
   demoVideo          String?
   publicCourse       Boolean              @default(false)
-  updated            DateTime             @default(now())
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
   topics             topics[]
   whatYouWillLearns  whatYouWillLearns[]
   targetedAudiences  targetedAudiences[]
   materialsIncludeds materialsIncludeds[]
   requirements       requirements[]
   tags               tags[]
-  categorys          categories[]
+  categories         categories[]
   students           enrolleds[]
-  discount           discounts            @relation(fields: [discountPrice], references: [discount])
-  discountPrice      Int                  @default(0)
+  discount           discounts?           @relation(fields: [discounts], references: [discount])
+  discounts          Int?
   orderDetail        orderDetails[]
 }
 

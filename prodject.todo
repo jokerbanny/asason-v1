@@ -281,8 +281,10 @@
               "content": "- Prisma Database Design",
               "id": 1677018600114,
               "level": "default",
-              "done": false,
-              "start": 1677018600114
+              "done": true,
+              "start": 1677018600114,
+              "focus": false,
+              "end": 1677052504940
             }
           },
           {
@@ -292,8 +294,10 @@
               "content": "- CRUD Users",
               "id": 1677018624015,
               "level": "default",
-              "done": false,
-              "start": 1677018624015
+              "done": true,
+              "start": 1677018624015,
+              "focus": false,
+              "end": 1677052502924
             }
           },
           {
@@ -303,8 +307,10 @@
               "content": "- Authenticate",
               "id": 1677018627104,
               "level": "default",
-              "done": false,
-              "start": 1677018627104
+              "done": true,
+              "start": 1677018627104,
+              "focus": false,
+              "end": 1677052507482
             }
           },
           {
@@ -314,8 +320,10 @@
               "content": "- Protect Route",
               "id": 1677049254320,
               "level": "default",
-              "done": false,
-              "start": 1677049254321
+              "done": true,
+              "start": 1677049254321,
+              "focus": false,
+              "end": 1677052501268
             }
           },
           {
@@ -325,8 +333,10 @@
               "content": "- Authorize",
               "id": 1677049265208,
               "level": "default",
-              "done": false,
-              "start": 1677049265208
+              "done": true,
+              "start": 1677049265208,
+              "focus": false,
+              "end": 1677052499611
             }
           }
         ],
@@ -356,6 +366,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677052004459"
+    "version": "1677052507560"
   }
 }
