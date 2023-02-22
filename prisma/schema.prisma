@@ -3,6 +3,178 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+// Usaers
+enum roles {
+  ADMIN
+  PUBLISHER
+  USER
+}
+
+model users {
+  id       String      @id @unique @default(uuid())
+  username String      @unique
+  email    String      @unique
+  password String
+  roles    roles       @default(USER)
+  courses  enrolleds[]
+  orders   orders[]
+}
+
+// Courses
+enum DifficultyLevel {
+  AllLevels
+  Beginner
+  Intermediate
+  Expert
+}
+
+enum CourseType {
+  FREE
+  PAID
+}
+
+enum Instructor {
+  Asason
+}
+
+model courses {
+  id                 String               @id @unique @default(uuid())
+  courseType         CourseType           @default(FREE)
+  name               String               @unique
+  description        String
+  price              Int                  @default(0)
+  views              Int                  @default(15)
+  difficultyLevel    DifficultyLevel      @default(AllLevels)
+  instructor         Instructor           @default(Asason)
+  thumbnail          String
+  demoVideo          String?
+  publicCourse       Boolean              @default(false)
+  updated            DateTime             @default(now())
+  topics             topics[]
+  whatYouWillLearns  whatYouWillLearns[]
+  targetedAudiences  targetedAudiences[]
+  materialsIncludeds materialsIncludeds[]
+  requirements       requirements[]
+  tags               tags[]
+  categorys          categories[]
+  students           enrolleds[]
+  discount           discounts            @relation(fields: [discountPrice], references: [discount])
+  discountPrice      Int                  @default(0)
+  orderDetail        orderDetails[]
+}
+
+model topics {
+  id        String    @id @default(uuid())
+  name      String
+  lessons   lessons[]
+  course    courses   @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model lessons {
+  id       String @id @unique @default(uuid())
+  name     String
+  link     String
+  topics   topics @relation(fields: [topicsId], references: [id])
+  topicsId String
+}
+
+model whatYouWillLearns {
+  id        String  @id @unique @default(uuid())
+  name      String
+  course    courses @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model targetedAudiences {
+  id        String  @id @unique @default(uuid())
+  name      String
+  course    courses @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model materialsIncludeds {
+  id        String  @unique @default(uuid())
+  name      String
+  course    courses @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model requirements {
+  id        String  @id @unique @default(uuid())
+  name      String
+  course    courses @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model tags {
+  id        String  @id @unique @default(uuid())
+  name      String
+  course    courses @relation(fields: [coursesId], references: [id])
+  coursesId String
+}
+
+model categories {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  description String
+  courses     courses[]
+}
+
+model discounts {
+  id       String    @id @unique @default(uuid())
+  discount Int       @unique @default(0)
+  courses  courses[]
+}
+
+// Orders
+enum Status {
+  PENDING
+  SUCCESS
+  CANCELLED
+}
+
+model orders {
+  id           String         @unique @default(uuid())
+  imagePayment String
+  subTotal     Int            @default(0)
+  total        Int            @default(0)
+  orderDate    DateTime       @default(now())
+  status       Status         @default(PENDING)
+  user         users          @relation(fields: [userId], references: [id])
+  userId       String
+  orderDetail  orderDetails[]
+}
+
+model orderDetails {
+  total      Int        @default(0)
+  courseType CourseType
+  courses    courses    @relation(fields: [courseId], references: [id])
+  courseId   String
+  order      orders     @relation(fields: [orderId], references: [id])
+  orderId    String
+
+  @@id([orderId, courseId])
+}
+
+// Enrolls
+model enrolleds {
+  id       String  @id @unique @default(uuid())
+  user     users   @relation(fields: [userId], references: [id])
+  userId   String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
+}
+
+model imageHero {
+  id    String @id @unique @default(uuid())
+  image String
+}
+
+model ratings {
+  id String @id @unique @default(uuid())
 }
