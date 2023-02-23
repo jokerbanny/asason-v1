@@ -5,7 +5,13 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import errorHandler from "./middlewares/erorMiddleware";
-import { authRoute, courseRoute, userRoute, categoryRoute } from "./routes";
+import {
+  authRoute,
+  courseRoute,
+  userRoute,
+  categoryRoute,
+  orderRoute,
+} from "./routes";
 
 const app: Application = express();
 
@@ -23,6 +29,7 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/categories", categoryRoute);
+app.use("/api/v1/orders", orderRoute);
 
 // Error Hanler
 app.use(errorHandler);

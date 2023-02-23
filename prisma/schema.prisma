@@ -149,6 +149,7 @@ model orders {
   user         users          @relation(fields: [userId], references: [id])
   userId       String
   orderDetail  orderDetails[]
+  enrolleds    enrolleds[]
 }
 
 model orderDetails {
@@ -169,6 +170,8 @@ model enrolleds {
   userId   String
   course   courses @relation(fields: [courseId], references: [id])
   courseId String
+  orders   orders  @relation(fields: [orderId], references: [id])
+  orderId  String
 }
 
 model imageHero {
