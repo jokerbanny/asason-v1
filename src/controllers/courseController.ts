@@ -83,14 +83,9 @@ export const createCourse = asyncHandler(
           connect: req.body.categories,
         },
         topics: {
-          create: req.body.topics.map((item: TopicLesson) => {
-            return {
-              name: item.name,
-              lessons: {
-                create: item.lessons,
-              },
-            };
-          }),
+          create: req.body.topics.map(item => {
+            return {}
+          })
         },
         whatYouWillLearns: {
           create: req.body.whatYouWillLearns,
