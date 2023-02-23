@@ -69,54 +69,54 @@ model courses {
 }
 
 model topics {
-  id        String    @id @default(uuid())
-  name      String
-  lessons   lessons[]
-  course    courses   @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String    @id @default(uuid())
+  name     String
+  lessons  lessons[]
+  course   courses   @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model lessons {
-  id       String @id @unique @default(uuid())
-  name     String
-  link     String
-  topics   topics @relation(fields: [topicsId], references: [id])
-  topicsId String
+  id      String @id @unique @default(uuid())
+  name    String
+  link    String
+  topics  topics @relation(fields: [topicId], references: [id])
+  topicId String
 }
 
 model whatYouWillLearns {
-  id        String  @id @unique @default(uuid())
-  name      String
-  course    courses @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String  @id @unique @default(uuid())
+  name     String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model targetedAudiences {
-  id        String  @id @unique @default(uuid())
-  name      String
-  course    courses @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String  @id @unique @default(uuid())
+  name     String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model materialsIncludeds {
-  id        String  @unique @default(uuid())
-  name      String
-  course    courses @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String  @unique @default(uuid())
+  name     String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model requirements {
-  id        String  @id @unique @default(uuid())
-  name      String
-  course    courses @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String  @id @unique @default(uuid())
+  name     String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model tags {
-  id        String  @id @unique @default(uuid())
-  name      String
-  course    courses @relation(fields: [coursesId], references: [id])
-  coursesId String
+  id       String  @id @unique @default(uuid())
+  name     String
+  course   courses @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model categories {

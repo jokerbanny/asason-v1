@@ -522,8 +522,10 @@
                   "content": "- Get All Categories",
                   "id": 1677070956536,
                   "level": "default",
-                  "done": false,
-                  "start": 1677070956536
+                  "done": true,
+                  "start": 1677070956536,
+                  "focus": false,
+                  "end": 1677073738135
                 }
               },
               {
@@ -533,8 +535,10 @@
                   "content": "- Get Single Category",
                   "id": 1677070970501,
                   "level": "default",
-                  "done": false,
-                  "start": 1677070970501
+                  "done": true,
+                  "start": 1677070970501,
+                  "focus": false,
+                  "end": 1677073738668
                 }
               },
               {
@@ -544,8 +548,10 @@
                   "content": "- Create Category",
                   "id": 1677070986430,
                   "level": "default",
-                  "done": false,
-                  "start": 1677070986430
+                  "done": true,
+                  "start": 1677070986430,
+                  "focus": false,
+                  "end": 1677073739531
                 }
               },
               {
@@ -555,8 +561,10 @@
                   "content": "- Update Category",
                   "id": 1677071000022,
                   "level": "default",
-                  "done": false,
-                  "start": 1677071000022
+                  "done": true,
+                  "start": 1677071000022,
+                  "focus": false,
+                  "end": 1677073740163
                 }
               },
               {
@@ -566,8 +574,10 @@
                   "content": "- Delete Category",
                   "id": 1677071009824,
                   "level": "default",
-                  "done": false,
-                  "start": 1677071009824
+                  "done": true,
+                  "start": 1677071009824,
+                  "focus": false,
+                  "end": 1677073740771
                 }
               }
             ],
@@ -575,8 +585,10 @@
               "content": "- Categories",
               "id": 1677070939381,
               "level": "default",
-              "done": false,
-              "start": 1677070939381
+              "done": true,
+              "start": 1677070939381,
+              "focus": false,
+              "end": 1677073736679
             }
           }
         ],
@@ -606,6 +618,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677071023585"
+    "version": "1677073742397"
   }
 }

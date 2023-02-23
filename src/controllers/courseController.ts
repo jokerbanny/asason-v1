@@ -1,6 +1,7 @@
 import prisma from "../utils/prisma";
 import asyncHandler from "express-async-handler";
 import { Request, Response } from "express";
+import { TopicLesson } from "./../models/topicLesson";
 
 //@desc      Get all Courses
 //route      GET /api/v1/courses
@@ -53,11 +54,9 @@ export const getCourse = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json(course);
 });
 
-//@desc      Pose Create Courses
-//route      Post /api/v1/courses/id
-//@access    Private
 export const createCourse = asyncHandler(
   async (req: Request, res: Response) => {
+    const { topics } = req.body;
     let course = await prisma.courses.findUnique({
       where: {
         name: req.body.name,
@@ -70,9 +69,64 @@ export const createCourse = asyncHandler(
     }
     course = await prisma.courses.create({
       data: {
-        ...req.body,
+        courseType: req.body.courseType,
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        views: req.body.views,
+        difficultyLevel: req.body.difficultyLevel,
+        instructor: req.body.instructor,
+        thumbnail: req.body.thumbnail,
+        demoVideo: req.body.demoVideo,
+        publicCourse: req.body.publicCourse,
+        categories: {
+          connect: req.body.categories,
+        },
+        topics: {
+          create: req.body.topics.map((item: TopicLesson) => {
+            return {
+              name: item.name,
+              lessons: {
+                create: item.lessons,
+              },
+            };
+          }),
+        },
+        whatYouWillLearns: {
+          create: req.body.whatYouWillLearns,
+        },
+        targetedAudiences: {
+          create: req.body.targetedAudiences,
+        },
+        materialsIncludeds: {
+          create: req.body.materialsIncludeds,
+        },
+        requirements: {
+          create: req.body.requirements,
+        },
+        tags: {
+          create: req.body.tags,
+        },
+        students: {
+          create: req.body.students,
+        },
+      },
+
+      include: {
+        topics: {
+          include: {
+            lessons: true,
+          },
+        },
+        whatYouWillLearns: true,
+        targetedAudiences: true,
+        materialsIncludeds: true,
+        requirements: true,
+        tags: true,
+        students: true,
       },
     });
+
     res.status(201).json(course);
   }
 );
