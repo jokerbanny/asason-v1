@@ -43,7 +43,7 @@ enum Instructor {
 
 model courses {
   id                 String               @id @unique @default(uuid())
-  slug               String
+  slug               String               @unique
   courseType         CourseType           @default(FREE)
   name               String               @unique
   description        String
@@ -177,13 +177,4 @@ model enrolleds {
   courseId    String?
   orders      orders?    @relation(fields: [orderId], references: [id], onDelete: SetNull)
   orderId     String?
-}
-
-model imageHero {
-  id    String @id @unique @default(uuid())
-  image String
-}
-
-model ratings {
-  id String @id @unique @default(uuid())
 }
