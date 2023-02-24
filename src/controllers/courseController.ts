@@ -2,6 +2,7 @@ import prisma from "../utils/prisma";
 import asyncHandler from "express-async-handler";
 import { Request, Response } from "express";
 import { TopicLesson } from "./../models/topicLesson";
+import slugify from "slugify";
 
 //@desc      Get all Courses
 //route      GET /api/v1/courses
@@ -56,7 +57,6 @@ export const getCourse = asyncHandler(async (req: Request, res: Response) => {
 
 export const createCourse = asyncHandler(
   async (req: Request, res: Response) => {
-    const { topics } = req.body;
     let course = await prisma.courses.findUnique({
       where: {
         name: req.body.name,
@@ -69,6 +69,9 @@ export const createCourse = asyncHandler(
     }
     course = await prisma.courses.create({
       data: {
+        slug: slugify(req.body.name, {
+          lower: true,
+        }),
         courseType: req.body.courseType,
         name: req.body.name,
         description: req.body.description,
@@ -83,9 +86,14 @@ export const createCourse = asyncHandler(
           connect: req.body.categories,
         },
         topics: {
-          create: req.body.topics.map(item => {
-            return {}
-          })
+          create: req.body.topics.map((item: TopicLesson) => {
+            return {
+              name: item.name,
+              lessons: {
+                create: item.lessons,
+              },
+            };
+          }),
         },
         whatYouWillLearns: {
           create: req.body.whatYouWillLearns,

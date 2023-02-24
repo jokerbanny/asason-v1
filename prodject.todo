@@ -357,13 +357,13 @@
               }
             ],
             "todo": {
-              "content": "- CRUD Users",
+              "content": "- Users",
               "id": 1677018624015,
               "level": "default",
               "done": true,
               "start": 1677018624015,
               "focus": false,
-              "end": 1677067545187
+              "end": 1677208914195
             }
           },
           {
@@ -590,6 +590,164 @@
               "focus": false,
               "end": 1677073736679
             }
+          },
+          {
+            "key": 1677208818109,
+            "children": [
+              {
+                "key": 1677208837167,
+                "children": [],
+                "todo": {
+                  "content": "- Get All Courses",
+                  "id": 1677208837167,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208837167,
+                  "focus": false,
+                  "end": 1677208894585
+                }
+              },
+              {
+                "key": 1677208849465,
+                "children": [],
+                "todo": {
+                  "content": "- Get Single Course",
+                  "id": 1677208849465,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208849465,
+                  "focus": false,
+                  "end": 1677208895181
+                }
+              },
+              {
+                "key": 1677208860660,
+                "children": [],
+                "todo": {
+                  "content": "- Create Course",
+                  "id": 1677208860660,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208860660,
+                  "focus": false,
+                  "end": 1677208895681
+                }
+              },
+              {
+                "key": 1677208868955,
+                "children": [],
+                "todo": {
+                  "content": "- Update Course",
+                  "id": 1677208868955,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208868955,
+                  "focus": false,
+                  "end": 1677208896327
+                }
+              },
+              {
+                "key": 1677208880976,
+                "children": [],
+                "todo": {
+                  "content": "- Delete Course",
+                  "id": 1677208880976,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208880976,
+                  "focus": false,
+                  "end": 1677208896827
+                }
+              }
+            ],
+            "todo": {
+              "content": "- Course",
+              "id": 1677208818109,
+              "level": "default",
+              "done": true,
+              "start": 1677208818109,
+              "focus": false,
+              "end": 1677208893262
+            }
+          },
+          {
+            "key": 1677208921812,
+            "children": [
+              {
+                "key": 1677208928354,
+                "children": [],
+                "todo": {
+                  "content": "- Get All Orders",
+                  "id": 1677208928354,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208928354,
+                  "focus": false,
+                  "end": 1677208985369
+                }
+              },
+              {
+                "key": 1677208939901,
+                "children": [],
+                "todo": {
+                  "content": "- Get Signle Order",
+                  "id": 1677208939901,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208939901,
+                  "focus": false,
+                  "end": 1677208985953
+                }
+              },
+              {
+                "key": 1677208951741,
+                "children": [],
+                "todo": {
+                  "content": "- Create Order",
+                  "id": 1677208951741,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208951741,
+                  "focus": false,
+                  "end": 1677208986567
+                }
+              },
+              {
+                "key": 1677208963653,
+                "children": [],
+                "todo": {
+                  "content": "- Update Order",
+                  "id": 1677208963653,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208963653,
+                  "focus": false,
+                  "end": 1677208987264
+                }
+              },
+              {
+                "key": 1677208971916,
+                "children": [],
+                "todo": {
+                  "content": "- Delete Orders",
+                  "id": 1677208971916,
+                  "level": "default",
+                  "done": true,
+                  "start": 1677208971916,
+                  "focus": false,
+                  "end": 1677208987815
+                }
+              }
+            ],
+            "todo": {
+              "content": "- Orders",
+              "id": 1677208921812,
+              "level": "default",
+              "done": true,
+              "start": 1677208921812,
+              "focus": false,
+              "end": 1677208984851
+            }
           }
         ],
         "todo": {
@@ -618,6 +776,6 @@
     "autoSort": false,
     "showEndTime": false,
     "lang": "en",
-    "version": "1677134981500"
+    "version": "1677208989559"
   }
 }

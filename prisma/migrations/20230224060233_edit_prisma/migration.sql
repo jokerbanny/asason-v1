@@ -15,6 +15,7 @@ CREATE TABLE `users` (
 -- CreateTable
 CREATE TABLE `courses` (
     `id` VARCHAR(191) NOT NULL,
+    `slug` VARCHAR(191) NOT NULL,
     `courseType` ENUM('FREE', 'PAID') NOT NULL DEFAULT 'FREE',
     `name` VARCHAR(191) NOT NULL,
     `description` VARCHAR(191) NOT NULL,
@@ -138,7 +139,8 @@ CREATE TABLE `orders` (
 
 -- CreateTable
 CREATE TABLE `orderDetails` (
-    `total` INTEGER NOT NULL DEFAULT 0,
+    `courseName` VARCHAR(191) NOT NULL,
+    `coursePrice` INTEGER NOT NULL DEFAULT 0,
     `courseType` ENUM('FREE', 'PAID') NOT NULL,
     `courseId` VARCHAR(191) NOT NULL,
     `orderId` VARCHAR(191) NOT NULL,
@@ -150,8 +152,8 @@ CREATE TABLE `orderDetails` (
 CREATE TABLE `enrolleds` (
     `id` VARCHAR(191) NOT NULL,
     `userId` VARCHAR(191) NOT NULL,
-    `courseId` VARCHAR(191) NOT NULL,
-    `orderId` VARCHAR(191) NOT NULL,
+    `courseId` VARCHAR(191) NULL,
+    `orderId` VARCHAR(191) NULL,
 
     UNIQUE INDEX `enrolleds_id_key`(`id`),
     PRIMARY KEY (`id`)
@@ -187,43 +189,43 @@ CREATE TABLE `_categoriesTocourses` (
 ALTER TABLE `courses` ADD CONSTRAINT `courses_discounts_fkey` FOREIGN KEY (`discounts`) REFERENCES `discounts`(`discount`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `topics` ADD CONSTRAINT `topics_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `topics` ADD CONSTRAINT `topics_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `lessons` ADD CONSTRAINT `lessons_topicId_fkey` FOREIGN KEY (`topicId`) REFERENCES `topics`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `lessons` ADD CONSTRAINT `lessons_topicId_fkey` FOREIGN KEY (`topicId`) REFERENCES `topics`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `whatYouWillLearns` ADD CONSTRAINT `whatYouWillLearns_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `whatYouWillLearns` ADD CONSTRAINT `whatYouWillLearns_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `targetedAudiences` ADD CONSTRAINT `targetedAudiences_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `targetedAudiences` ADD CONSTRAINT `targetedAudiences_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `materialsIncludeds` ADD CONSTRAINT `materialsIncludeds_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `materialsIncludeds` ADD CONSTRAINT `materialsIncludeds_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `requirements` ADD CONSTRAINT `requirements_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `requirements` ADD CONSTRAINT `requirements_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `tags` ADD CONSTRAINT `tags_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `tags` ADD CONSTRAINT `tags_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `orders` ADD CONSTRAINT `orders_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `orders` ADD CONSTRAINT `orders_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `orderDetails` ADD CONSTRAINT `orderDetails_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `orderDetails` ADD CONSTRAINT `orderDetails_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `orderDetails` ADD CONSTRAINT `orderDetails_orderId_fkey` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `orderDetails` ADD CONSTRAINT `orderDetails_orderId_fkey` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_courseId_fkey` FOREIGN KEY (`courseId`) REFERENCES `courses`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_orderId_fkey` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `enrolleds` ADD CONSTRAINT `enrolleds_orderId_fkey` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `_categoriesTocourses` ADD CONSTRAINT `_categoriesTocourses_A_fkey` FOREIGN KEY (`A`) REFERENCES `categories`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

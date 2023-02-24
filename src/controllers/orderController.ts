@@ -9,7 +9,8 @@ interface OrderDetails {
 interface OrderDetail {
   courseId: string;
   courseType: string;
-  total: number;
+  courseName: string;
+  coursePrice: number;
 }
 
 //@desc      Get all Orders
@@ -59,7 +60,7 @@ export const createOrder = asyncHandler(async (req: Request, res: Response) => {
       subTotal,
       total,
       orderDetail: {
-        create: courseItems.map((item: OrderDetails) => item),
+        create: courseItems,
       },
     },
     include: {
@@ -100,8 +101,11 @@ export const updateOrder = asyncHandler(async (req: Request, res: Response) => {
           // @ts-ignore
           create: order.orderDetail?.map((item: OrderDetail) => {
             return {
-              userId: order?.userId,
               courseId: item.courseId,
+              courseType: item.courseType,
+              courseName: item.courseName,
+              coursePrice: item.coursePrice,
+              userId: order?.userId,
             };
           }),
         },
